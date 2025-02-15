@@ -26,8 +26,8 @@ export async function extractAudioFromVideo(
     // Cleanup
     try {
       await Promise.all([
-        Bun.file(inputPath).remove(),
-        Bun.file(outputPath).remove(),
+        Bun.file(inputPath).delete(),
+        Bun.file(outputPath).delete(),
       ]);
     } catch (e) {
       console.error("Cleanup error:", e);
